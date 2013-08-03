@@ -38,6 +38,8 @@
 		108B377817ABABA5008FFC2B /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B377717ABABA5008FFC2B /* Button.m */; };
 		108B377B17ABABB1008FFC2B /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B377A17ABABB1008FFC2B /* ImageView.m */; };
 		108B377E17ABABE2008FFC2B /* CommonMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B377D17ABABE2008FFC2B /* CommonMethod.m */; };
+		F4D69D8D17ACE6B400C261C9 /* ZHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D69D8B17ACE6B400C261C9 /* ZHMainViewController.m */; };
+		F4D69D8E17ACE6B400C261C9 /* ZHMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D69D8C17ACE6B400C261C9 /* ZHMainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,9 @@
 		108B377C17ABABE2008FFC2B /* CommonMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonMethod.h; sourceTree = "<group>"; };
 		108B377D17ABABE2008FFC2B /* CommonMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonMethod.m; sourceTree = "<group>"; };
 		108B377F17ABBC84008FFC2B /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
+		F4D69D8A17ACE6B400C261C9 /* ZHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHMainViewController.h; path = ViewController/ZHMainViewController.h; sourceTree = "<group>"; };
+		F4D69D8B17ACE6B400C261C9 /* ZHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHMainViewController.m; path = ViewController/ZHMainViewController.m; sourceTree = "<group>"; };
+		F4D69D8C17ACE6B400C261C9 /* ZHMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZHMainViewController.xib; path = ViewController/ZHMainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				100BB96617A8DF29000E00A7 /* NetWork */,
+				100BB96717A8DF29000E00A7 /* Supporting Files */,
 				100BB95F17A8DF29000E00A7 /* Frameworks */,
 				100BB95E17A8DF29000E00A7 /* Products */,
 			);
@@ -156,10 +162,7 @@
 				108B376917ABAAD2008FFC2B /* Unit */,
 				100BB96F17A8DF29000E00A7 /* ZHAppDelegate.h */,
 				100BB97017A8DF29000E00A7 /* ZHAppDelegate.m */,
-				100BB97817A8DF29000E00A7 /* ZHViewController.h */,
-				100BB97917A8DF29000E00A7 /* ZHViewController.m */,
-				100BB97B17A8DF29000E00A7 /* ZHViewController.xib */,
-				100BB96717A8DF29000E00A7 /* Supporting Files */,
+				F4D69D8F17ACE6BE00C261C9 /* ViewController */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				100BB97617A8DF29000E00A7 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = NetWork;
 			sourceTree = "<group>";
 		};
 		100BB98317A8E015000E00A7 /* AFNetworking */ = {
@@ -223,6 +227,19 @@
 				108B377D17ABABE2008FFC2B /* CommonMethod.m */,
 			);
 			path = Unit;
+			sourceTree = "<group>";
+		};
+		F4D69D8F17ACE6BE00C261C9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				100BB97817A8DF29000E00A7 /* ZHViewController.h */,
+				100BB97917A8DF29000E00A7 /* ZHViewController.m */,
+				100BB97B17A8DF29000E00A7 /* ZHViewController.xib */,
+				F4D69D8A17ACE6B400C261C9 /* ZHMainViewController.h */,
+				F4D69D8B17ACE6B400C261C9 /* ZHMainViewController.m */,
+				F4D69D8C17ACE6B400C261C9 /* ZHMainViewController.xib */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +299,7 @@
 				100BB97517A8DF29000E00A7 /* Default@2x.png in Resources */,
 				100BB97717A8DF29000E00A7 /* Default-568h@2x.png in Resources */,
 				100BB97D17A8DF29000E00A7 /* ZHViewController.xib in Resources */,
+				F4D69D8E17ACE6B400C261C9 /* ZHMainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +329,7 @@
 				108B377817ABABA5008FFC2B /* Button.m in Sources */,
 				108B377B17ABABB1008FFC2B /* ImageView.m in Sources */,
 				108B377E17ABABE2008FFC2B /* CommonMethod.m in Sources */,
+				F4D69D8D17ACE6B400C261C9 /* ZHMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
