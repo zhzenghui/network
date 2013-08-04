@@ -14,7 +14,7 @@ static NSMutableDictionary *sessionDictionary;
 
 + (id)getSession:(NSString *)keyName
 {
-	if(keyName !=@"")
+	if(![keyName isEqualToString: @""] && keyName != NO)
 	{
 		return [sessionDictionary objectForKey:keyName];
 	}

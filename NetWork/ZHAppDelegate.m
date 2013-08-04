@@ -9,8 +9,22 @@
 #import "ZHAppDelegate.h"
 
 #import "ZHViewController.h"
+#import "TopIOSClient.h"
+
 
 @implementation ZHAppDelegate
+
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL*)url
+{
+    
+    TopIOSClient *iosClient = [TopIOSClient getIOSClientByAppKey:KTaoBaoAppKey];
+    
+    [iosClient authCallback:url];
+    
+    return YES;
+}
+
 
 - (void)dealloc
 {
@@ -22,7 +36,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
+
     self.viewController = [[[ZHViewController alloc] initWithNibName:@"ZHViewController" bundle:nil] autorelease];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];

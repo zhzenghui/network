@@ -9,12 +9,26 @@
 #import "ZHViewController.h"
 #import "AFJSONRequestOperation.h"
 #import "AFHTTPClient.h"
+#import "TopIOSClient.h"
+
 
 @interface ZHViewController ()
 
 @end
 
 @implementation ZHViewController
+
+-(void)authCallback:(NSString *)url;
+{
+    NSLog("%@", url);
+}
+
+- (IBAction)authAction:(id)sender {
+    TopIOSClient *iosClient = [TopIOSClient getIOSClientByAppKey:@"appkey"];
+    [iosClient auth:self cb:@selector(authCallback:)];
+}
+
+
 
 - (void)getInfo:(UIButton *)b
 {
@@ -103,6 +117,14 @@
     [button addTarget:self  action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
+    
+    
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button2 setTitle:@"auth taobao" forState:UIControlStateNormal];
+    button2.frame = CGRectMake(20, 400, 280, 50);
+    [button2 addTarget:self  action:@selector(authAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:button2];
     
 //    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/users.json"];
 //    NSURLRequest *request = [NSURLRequest requestWithURL:url];
