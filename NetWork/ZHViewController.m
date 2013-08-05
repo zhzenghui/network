@@ -20,7 +20,7 @@
 
 -(void)authCallback:(NSString *)url;
 {
-    NSLog("%@", url);
+    NSLog(@"%@", url);
 }
 
 - (IBAction)authAction:(id)sender {
@@ -35,7 +35,8 @@
     
     NSURL *url = [NSURL URLWithString:@"http://localhost:3000/users.json"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-
+    
+    
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"IP Address: %@", [JSON valueForKeyPath:@"name"]);
         NSString *s = [NSString stringWithFormat:@"%@", JSON];
@@ -50,49 +51,161 @@
     [operation start];
 }
 
+
+- (void)loginSuccess:(id)responseObject
+{
+    DLog(@"login  success")
+
+    
+    NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+    NSLog(@"Request Successful, response '%@'", responseStr);
+    
+    textField.text = responseStr;
+    
+    /*
+     过期设置
+     
+     */
+    NSMutableDictionary *userDict = [NSMutableDictionary dictionaryWithDictionary:[responseStr objectFromJSONString]];
+    
+    
+    //                 保存用户信息
+    
+    [[User share] saveCurrentUser:userDict];
+    
+    //                 登陆成功调用
+    
+    
+    
+//    添加获取信息的按钮    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setTitle:@"获取users信息" forState:UIControlStateNormal];
+    button.frame =CGRectMake(20, 200, 280, 50);
+    [button addTarget:self  action:@selector(getInfo:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:button];
+}
+
+- (void)networkCheckUserInfo:(NSString *)userName PWD:(NSString *)pwd
+{
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wshadow-ivar"
+    __block NSString *userNameString = [[NSString alloc] initWithFormat:@"%@", userName];
+    __block NSString *userPwdString = [[NSString alloc] initWithFormat:@"%@", pwd ];
+#pragma clang diagnostic pop
+
+    dispatch_queue_t myQueue = dispatch_queue_create("com.mycompany.myqueue", 0);
+    
+    dispatch_async(myQueue, ^{
+        
+
+        
+        if ([[NetWork shareNetWork] CheckNetwork]) {
+            NSLog(@"connection yes");
+        }
+        else {
+            NSLog(@"connection NO");
+            [[Message share] messageAlert:@"请检查网络"];
+        }
+        
+        
+        
+        NSURL *url = [NSURL URLWithString:@"http://localhost:3000/"];
+        AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
+        
+        NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                                userNameString, @"session[email]",
+                                userPwdString, @"session[pwd]",
+                                nil];
+
+        [httpClient postPath:@"/signin" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            NSLog(@"Request Successful, response '%@'", responseStr);
+            if ( ! [responseStr isEqualToString:@"NO"]) {
+                DLog(@"登陆成功！");
+                
+                
+                [self loginSuccess:responseObject];
+                
+            }
+            else {
+                
+                DLog(@"发生错误， 返回的数据：%@",  responseStr);
+                [[Message share] messageAlert:@"登陆失败，请检查用户名密码！"];
+            }
+            
+
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+            
+        }];
+
+    });
+    
+    dispatch_release(myQueue);
+    
+}
+
 - (void)login:(UIButton *)b
 {
     
-    if ([[NetWork shareNetWork] CheckNetwork]) {
-        NSLog(@"yes");
-        [[Message share] messageAlert:@"YES"];
+//      1.检查用户本地是否存在
+//          存在：
+//            1.1.1 存在 检查本地是否过期   ----只 汉诺
+//                  过期进入网络验证
+//            1.1.2 验证用户信息
+//          不存在：
+//            1.2.1 访问网络检查用户
+//          通过：
+//            1.3.1.获取用户信息
+//    
+//      2.网络验证
+//
+    
+    if ( [(User *)[User share] name] ) {
+        
+        DLog(@"current user %@", [(User *)[User share] name]);
+        
     }
     else {
-        NSLog(@"NO");
-        return;
+        DLog(@"not user");
     }
     
-    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/"];
-    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
-    
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                            @"asdf", @"session[email]",
-                            @"asdf", @"session[pwd]",
-                            nil];
-
-    [httpClient postPath:@"/signin" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"Request Successful, response '%@'", responseStr);
-        
-        textField.text = responseStr;
-        
-        
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [button setTitle:@"获取users信息" forState:UIControlStateNormal];
-        button.frame =CGRectMake(20, 200, 280, 50);
-        [button addTarget:self  action:@selector(getInfo:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [self.view addSubview:button];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
-    }];
 
     
-    
+    if ([netWork checkLocalUserInfo:userName]) {
+        
+        
+        if ([netWork checkLocalUsername:userName PWD:pwd]) {
+            DLog(@"验证本地用户信息=======Y");
+            
+            if ([netWork checkLocalUserInfoExpired:userName]) {
+                DLog(@"验证本地用户过期=======Y");
+                
+                NSLog(@"登陆 SSSSSSSSSSSSS");
+                
+            }
+            else {
+                
+                [self networkCheckUserInfo:userName PWD:pwd];
 
+                DLog(@"验证本地用户过期=======N");
+            }
+
+        }
+        else {
+            
+            DLog(@"验证本地用户信息失败====N");
+        }
+    }
+    else {
+        [self networkCheckUserInfo:userName PWD:pwd];
+        DLog(@"没有本地用户信息====N");
+    }
 }
 
 - (void)viewDidLoad
@@ -101,6 +214,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     
+    userName = [[NSString alloc ]initWithFormat:@"asdf"];
+    pwd = [[NSString alloc ]initWithFormat:@"asdf"];
+
     netWork = [[NetWork alloc] init];
     
     

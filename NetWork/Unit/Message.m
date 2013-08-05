@@ -40,5 +40,10 @@ static Message *message;
     [av release];
 }
 
+- (void)messagePrompt:(NSString *)message
+{
+    
+}
+
 
 @end

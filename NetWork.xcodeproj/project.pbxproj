@@ -22,6 +22,48 @@
 		100BB9A317A8E0C5000E00A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100BB9A217A8E0C5000E00A7 /* SystemConfiguration.framework */; };
 		100BB9A517A8E0CC000E00A7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100BB9A417A8E0CB000E00A7 /* Security.framework */; };
 		100BB9A717A8E0D1000E00A7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100BB9A617A8E0D1000E00A7 /* MobileCoreServices.framework */; };
+		10590D4717AF54BE0041E485 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 100BB96C17A8DF29000E00A7 /* main.m */; };
+		10590D4817AF54BE0041E485 /* ZHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 100BB97017A8DF29000E00A7 /* ZHAppDelegate.m */; };
+		10590D4917AF54BE0041E485 /* ZHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 100BB97917A8DF29000E00A7 /* ZHViewController.m */; };
+		10590D4A17AF54BE0041E485 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B376B17ABAAD2008FFC2B /* Message.m */; };
+		10590D4B17AF54BE0041E485 /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B376D17ABAAD2008FFC2B /* NetWork.m */; };
+		10590D4C17AF54BE0041E485 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B376F17ABAAD2008FFC2B /* User.m */; };
+		10590D4D17AF54BE0041E485 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B377717ABABA5008FFC2B /* Button.m */; };
+		10590D4E17AF54BE0041E485 /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B377A17ABABB1008FFC2B /* ImageView.m */; };
+		10590D4F17AF54BE0041E485 /* CommonMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B377D17ABABE2008FFC2B /* CommonMethod.m */; };
+		10590D5017AF54BE0041E485 /* ZHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D69D8B17ACE6B400C261C9 /* ZHMainViewController.m */; };
+		10590D5117AF54BE0041E485 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = F44718CA17AE4BD2007D012F /* Session.m */; };
+		10590D5217AF54BE0041E485 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F44718FF17AEB79B007D012F /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		10590D5317AF54BE0041E485 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F447190117AEB79B007D012F /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		10590D5417AF54BE0041E485 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F447190317AEB79B007D012F /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		10590D5517AF54BE0041E485 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F447190517AEB79B007D012F /* AFJSONRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		10590D5617AF54BE0041E485 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F447190717AEB79B007D012F /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		10590D5717AF54BE0041E485 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F447190A17AEB79B007D012F /* AFPropertyListRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		10590D5817AF54BE0041E485 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F447190C17AEB79B007D012F /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		10590D5917AF54BE0041E485 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F447190E17AEB79B007D012F /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		10590D5A17AF54BE0041E485 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F447191017AEB79B007D012F /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		10590D5B17AF54BE0041E485 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F447191217AEB79B007D012F /* Reachability.m */; };
+		10590D5D17AF54BE0041E485 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F447194717AEBC19007D012F /* libz.1.2.5.dylib */; };
+		10590D5E17AF54BE0041E485 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100BB9A217A8E0C5000E00A7 /* SystemConfiguration.framework */; };
+		10590D5F17AF54BE0041E485 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100BB9A617A8E0D1000E00A7 /* MobileCoreServices.framework */; };
+		10590D6017AF54BE0041E485 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100BB9A417A8E0CB000E00A7 /* Security.framework */; };
+		10590D6117AF54BE0041E485 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100BB9A017A8E0BB000E00A7 /* CFNetwork.framework */; };
+		10590D6217AF54BE0041E485 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100BB96017A8DF29000E00A7 /* UIKit.framework */; };
+		10590D6317AF54BE0041E485 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100BB96217A8DF29000E00A7 /* Foundation.framework */; };
+		10590D6417AF54BE0041E485 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100BB96417A8DF29000E00A7 /* CoreGraphics.framework */; };
+		10590D6717AF54BE0041E485 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 100BB96917A8DF29000E00A7 /* InfoPlist.strings */; };
+		10590D6817AF54BE0041E485 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 100BB97217A8DF29000E00A7 /* Default.png */; };
+		10590D6917AF54BE0041E485 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 100BB97417A8DF29000E00A7 /* Default@2x.png */; };
+		10590D6A17AF54BE0041E485 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 100BB97617A8DF29000E00A7 /* Default-568h@2x.png */; };
+		10590D6B17AF54BE0041E485 /* ZHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 100BB97B17A8DF29000E00A7 /* ZHViewController.xib */; };
+		10590D6C17AF54BE0041E485 /* ZHMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D69D8C17ACE6B400C261C9 /* ZHMainViewController.xib */; };
+		10590D6D17AF54BE0041E485 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F44718CC17AE50F8007D012F /* README.md */; };
+		10590D7417AF54F40041E485 /* libTOPIOSSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10590D7317AF54F40041E485 /* libTOPIOSSdk.a */; };
+		10590D7517AF55050041E485 /* libTOPIOSSdk.s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F447193A17AEB79B007D012F /* libTOPIOSSdk.s.a */; };
+		10590D7B17AF7D2C0041E485 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 10590D7A17AF7D2B0041E485 /* JSONKit.m */; };
+		10590D7C17AF7D2C0041E485 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 10590D7A17AF7D2B0041E485 /* JSONKit.m */; };
+		10590D7F17AFA2670041E485 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 10590D7E17AFA2670041E485 /* NSDate+Helper.m */; };
+		10590D8017AFA2670041E485 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 10590D7E17AFA2670041E485 /* NSDate+Helper.m */; };
 		108B377017ABAAD2008FFC2B /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B376B17ABAAD2008FFC2B /* Message.m */; };
 		108B377117ABAAD2008FFC2B /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B376D17ABAAD2008FFC2B /* NetWork.m */; };
 		108B377217ABAAD2008FFC2B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B376F17ABAAD2008FFC2B /* User.m */; };
@@ -40,7 +82,6 @@
 		F447194217AEB79B007D012F /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F447190E17AEB79B007D012F /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		F447194317AEB79B007D012F /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F447191017AEB79B007D012F /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		F447194417AEB79B007D012F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F447191217AEB79B007D012F /* Reachability.m */; };
-		F447194617AEB79B007D012F /* libTOPIOSSdk.s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F447193A17AEB79B007D012F /* libTOPIOSSdk.s.a */; };
 		F447194817AEBC1A007D012F /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F447194717AEBC19007D012F /* libz.1.2.5.dylib */; };
 		F4D69D8D17ACE6B400C261C9 /* ZHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D69D8B17ACE6B400C261C9 /* ZHMainViewController.m */; };
 		F4D69D8E17ACE6B400C261C9 /* ZHMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D69D8C17ACE6B400C261C9 /* ZHMainViewController.xib */; };
@@ -67,6 +108,14 @@
 		100BB9A217A8E0C5000E00A7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		100BB9A417A8E0CB000E00A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		100BB9A617A8E0D1000E00A7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		10590D7117AF54BE0041E485 /* NetWork copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NetWork copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10590D7217AF54BF0041E485 /* NetWork copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NetWork copy-Info.plist"; path = "/Users/mbp/Documents/github/network/NetWork copy-Info.plist"; sourceTree = "<absolute>"; };
+		10590D7317AF54F40041E485 /* libTOPIOSSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTOPIOSSdk.a; path = Header/libTOPIOSSdk.a; sourceTree = "<group>"; };
+		10590D7817AF74C30041E485 /* CCLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLog.h; sourceTree = "<group>"; };
+		10590D7917AF7D2B0041E485 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		10590D7A17AF7D2B0041E485 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		10590D7D17AFA2660041E485 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		10590D7E17AFA2670041E485 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
 		108B376A17ABAAD2008FFC2B /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		108B376B17ABAAD2008FFC2B /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		108B376C17ABAAD2008FFC2B /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
@@ -162,7 +211,23 @@
 				100BB96117A8DF29000E00A7 /* UIKit.framework in Frameworks */,
 				100BB96317A8DF29000E00A7 /* Foundation.framework in Frameworks */,
 				100BB96517A8DF29000E00A7 /* CoreGraphics.framework in Frameworks */,
-				F447194617AEB79B007D012F /* libTOPIOSSdk.s.a in Frameworks */,
+				10590D7517AF55050041E485 /* libTOPIOSSdk.s.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10590D5C17AF54BE0041E485 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10590D5D17AF54BE0041E485 /* libz.1.2.5.dylib in Frameworks */,
+				10590D5E17AF54BE0041E485 /* SystemConfiguration.framework in Frameworks */,
+				10590D5F17AF54BE0041E485 /* MobileCoreServices.framework in Frameworks */,
+				10590D6017AF54BE0041E485 /* Security.framework in Frameworks */,
+				10590D6117AF54BE0041E485 /* CFNetwork.framework in Frameworks */,
+				10590D6217AF54BE0041E485 /* UIKit.framework in Frameworks */,
+				10590D6317AF54BE0041E485 /* Foundation.framework in Frameworks */,
+				10590D6417AF54BE0041E485 /* CoreGraphics.framework in Frameworks */,
+				10590D7417AF54F40041E485 /* libTOPIOSSdk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +242,7 @@
 				100BB96717A8DF29000E00A7 /* Supporting Files */,
 				100BB95F17A8DF29000E00A7 /* Frameworks */,
 				100BB95E17A8DF29000E00A7 /* Products */,
+				10590D7217AF54BF0041E485 /* NetWork copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				100BB95D17A8DF29000E00A7 /* NetWork.app */,
+				10590D7117AF54BE0041E485 /* NetWork copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,11 +300,14 @@
 		108B376917ABAAD2008FFC2B /* Unit */ = {
 			isa = PBXGroup;
 			children = (
+				108B377317ABAB25008FFC2B /* Common.h */,
 				108B377F17ABBC84008FFC2B /* Unit.h */,
+				10590D7817AF74C30041E485 /* CCLog.h */,
+				10590D7D17AFA2660041E485 /* NSDate+Helper.h */,
+				10590D7E17AFA2670041E485 /* NSDate+Helper.m */,
 				F44718CE17AEB184007D012F /* String.h */,
 				F44718C917AE4BD2007D012F /* Session.h */,
 				F44718CA17AE4BD2007D012F /* Session.m */,
-				108B377317ABAB25008FFC2B /* Common.h */,
 				108B376A17ABAAD2008FFC2B /* Message.h */,
 				108B376B17ABAAD2008FFC2B /* Message.m */,
 				108B376C17ABAAD2008FFC2B /* NetWork.h */,
@@ -257,6 +327,8 @@
 		F44718FC17AEB79B007D012F /* Other frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10590D7917AF7D2B0041E485 /* JSONKit.h */,
+				10590D7A17AF7D2B0041E485 /* JSONKit.m */,
 				F44718FD17AEB79B007D012F /* AFNetworking */,
 				F447191117AEB79B007D012F /* Reachability.h */,
 				F447191217AEB79B007D012F /* Reachability.m */,
@@ -297,6 +369,7 @@
 			children = (
 				F447191417AEB79B007D012F /* Header */,
 				F447193A17AEB79B007D012F /* libTOPIOSSdk.s.a */,
+				10590D7317AF54F40041E485 /* libTOPIOSSdk.a */,
 			);
 			path = taobao;
 			sourceTree = "<group>";
@@ -377,6 +450,23 @@
 			productReference = 100BB95D17A8DF29000E00A7 /* NetWork.app */;
 			productType = "com.apple.product-type.application";
 		};
+		10590D4517AF54BE0041E485 /* NetWork V1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10590D6E17AF54BE0041E485 /* Build configuration list for PBXNativeTarget "NetWork V1" */;
+			buildPhases = (
+				10590D4617AF54BE0041E485 /* Sources */,
+				10590D5C17AF54BE0041E485 /* Frameworks */,
+				10590D6617AF54BE0041E485 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NetWork V1";
+			productName = NetWork;
+			productReference = 10590D7117AF54BE0041E485 /* NetWork copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -400,6 +490,7 @@
 			projectRoot = "";
 			targets = (
 				100BB95C17A8DF29000E00A7 /* NetWork */,
+				10590D4517AF54BE0041E485 /* NetWork V1 */,
 			);
 		};
 /* End PBXProject section */
@@ -416,6 +507,20 @@
 				100BB97D17A8DF29000E00A7 /* ZHViewController.xib in Resources */,
 				F4D69D8E17ACE6B400C261C9 /* ZHMainViewController.xib in Resources */,
 				F44718CD17AE50F8007D012F /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10590D6617AF54BE0041E485 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10590D6717AF54BE0041E485 /* InfoPlist.strings in Resources */,
+				10590D6817AF54BE0041E485 /* Default.png in Resources */,
+				10590D6917AF54BE0041E485 /* Default@2x.png in Resources */,
+				10590D6A17AF54BE0041E485 /* Default-568h@2x.png in Resources */,
+				10590D6B17AF54BE0041E485 /* ZHViewController.xib in Resources */,
+				10590D6C17AF54BE0041E485 /* ZHMainViewController.xib in Resources */,
+				10590D6D17AF54BE0041E485 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +552,38 @@
 				F447194217AEB79B007D012F /* AFXMLRequestOperation.m in Sources */,
 				F447194317AEB79B007D012F /* UIImageView+AFNetworking.m in Sources */,
 				F447194417AEB79B007D012F /* Reachability.m in Sources */,
+				10590D7B17AF7D2C0041E485 /* JSONKit.m in Sources */,
+				10590D7F17AFA2670041E485 /* NSDate+Helper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10590D4617AF54BE0041E485 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10590D4717AF54BE0041E485 /* main.m in Sources */,
+				10590D4817AF54BE0041E485 /* ZHAppDelegate.m in Sources */,
+				10590D4917AF54BE0041E485 /* ZHViewController.m in Sources */,
+				10590D4A17AF54BE0041E485 /* Message.m in Sources */,
+				10590D4B17AF54BE0041E485 /* NetWork.m in Sources */,
+				10590D4C17AF54BE0041E485 /* User.m in Sources */,
+				10590D4D17AF54BE0041E485 /* Button.m in Sources */,
+				10590D4E17AF54BE0041E485 /* ImageView.m in Sources */,
+				10590D4F17AF54BE0041E485 /* CommonMethod.m in Sources */,
+				10590D5017AF54BE0041E485 /* ZHMainViewController.m in Sources */,
+				10590D5117AF54BE0041E485 /* Session.m in Sources */,
+				10590D5217AF54BE0041E485 /* AFHTTPClient.m in Sources */,
+				10590D5317AF54BE0041E485 /* AFHTTPRequestOperation.m in Sources */,
+				10590D5417AF54BE0041E485 /* AFImageRequestOperation.m in Sources */,
+				10590D5517AF54BE0041E485 /* AFJSONRequestOperation.m in Sources */,
+				10590D5617AF54BE0041E485 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				10590D5717AF54BE0041E485 /* AFPropertyListRequestOperation.m in Sources */,
+				10590D5817AF54BE0041E485 /* AFURLConnectionOperation.m in Sources */,
+				10590D5917AF54BE0041E485 /* AFXMLRequestOperation.m in Sources */,
+				10590D5A17AF54BE0041E485 /* UIImageView+AFNetworking.m in Sources */,
+				10590D5B17AF54BE0041E485 /* Reachability.m in Sources */,
+				10590D7C17AF7D2C0041E485 /* JSONKit.m in Sources */,
+				10590D8017AFA2670041E485 /* NSDate+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +707,50 @@
 			};
 			name = Release;
 		};
+		10590D6F17AF54BE0041E485 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetWork/NetWork-Prefix.pch";
+				INFOPLIST_FILE = "NetWork copy-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/NetWork/other frameworks/taobao\"",
+					"\"$(SRCROOT)/NetWork/Other frameworks/taobao\"",
+					"\"$(SRCROOT)/NetWork/Other frameworks/taobao/Header\"",
+				);
+				OTHER_LDFLAGS = (
+					"-objC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "NetWork copy";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		10590D7017AF54BE0041E485 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetWork/NetWork-Prefix.pch";
+				INFOPLIST_FILE = "NetWork copy-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/NetWork/other frameworks/taobao\"",
+					"\"$(SRCROOT)/NetWork/Other frameworks/taobao\"",
+					"\"$(SRCROOT)/NetWork/Other frameworks/taobao/Header\"",
+				);
+				OTHER_LDFLAGS = (
+					"-objC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "NetWork copy";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -587,6 +768,15 @@
 			buildConfigurations = (
 				100BB98117A8DF29000E00A7 /* Debug */,
 				100BB98217A8DF29000E00A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10590D6E17AF54BE0041E485 /* Build configuration list for PBXNativeTarget "NetWork V1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10590D6F17AF54BE0041E485 /* Debug */,
+				10590D7017AF54BE0041E485 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

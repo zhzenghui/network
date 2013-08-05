@@ -13,6 +13,13 @@
 {
     UITextField *textField;
     NetWork *netWork;
+    
+    NSString *userName;
+    NSString *pwd;
+    
+    
 }
+
+
 
 @end

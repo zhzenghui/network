@@ -35,18 +35,17 @@
 #define BUTTONSIZEHEIGHT(BTN) BTN.frame.size.height
 
 
+#define KNSUserDefaults [NSUserDefaults standardUserDefaults] 
+
+#define KCurrentUser @"currentUser"
+
+
+
 
 //  淘宝
 
 #define KTaoBaoAppKey @"21584394"
 #define KTaoBaoSecert @"bbff717c92a7d3cdbe99e901cf8057d9"
-
-
-
-
-
-
-
 
 
 

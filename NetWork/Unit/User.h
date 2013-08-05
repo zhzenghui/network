@@ -17,8 +17,10 @@
 @property(nonatomic, retain) NSString *role;
 @property(nonatomic, retain) NSString *created_at;
 @property(nonatomic, retain) NSString *updated_at;
+@property(nonatomic, retain) NSString *expiredDate;
 
 + (id)share;
+
 
 - (void)jsonToUser;
 
@@ -27,5 +29,14 @@
 - (void)updateUser:(NSString *)userID;
 
 - (void)deleteUser:(NSString *)userID;
+
+
+- (NSDictionary *)userToDict:(User *)user;
+- (User *)dictToUser:(NSDictionary *)userDict;
+
+
+- (void)saveCurrentUser:(NSDictionary *)userDict;
+- (void)deleteCurrentUser:(NSDictionary *)userDict;
+
 
 @end

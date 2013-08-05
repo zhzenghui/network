@@ -31,4 +31,6 @@ static CommonMethod *commonMethod;
     return self;
 }
 
+
+
 @end

@@ -15,9 +15,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NetWork : NSObject
-{
-    
-}
+
 
 @property(nonatomic ,assign) bool isConnect;
 @property(nonatomic ,assign) bool isFirstLogin;
@@ -29,26 +27,30 @@
 -(BOOL)CheckNetwork;
 
 
+/* 验证本地用户信息
+ *
+ */
+- (BOOL)checkLocalUsername:(NSString *)userName PWD:(NSString *)pwd;
+
 /* 检查本地是否存在用户信息
  *
  */
-- (void)checkLocalUserInfo:(NSString *)userName;
+- (BOOL)checkLocalUserInfo:(NSString *)userName;
 
 /* 检查本地用户信息过期
  
  */
-- (void)checkLocalUserInfoExpired:(NSString *)userName;
+- (BOOL)checkLocalUserInfoExpired:(NSString *)userName;
 
 /*  检查本地数据Version
  *  如果第一次登陆isFirstLogin=YES
  *  不允许跳过更新
  */
-- (void)checkLocalIsFirstVersion;
+- (BOOL)checkLocalIsFirstVersion;
 
 
 - (void)login;
 
-- (void)getInfo;
 
 
 
