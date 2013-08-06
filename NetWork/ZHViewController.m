@@ -52,6 +52,75 @@
 }
 
 
+-(void)showApiResponse:(id)data
+{
+    if ([data isKindOfClass:[TopApiResponse class]])
+    {
+        TopApiResponse *response = (TopApiResponse *)data;
+        
+        if ([response content])
+        {
+            NSLog(@"%@",[response content]);
+            [textField setText:[response content]];
+        }
+        else {
+            NSLog(@"%@",[(NSError *)[response error] userInfo]);
+        }
+        
+        NSDictionary *dictionary = (NSDictionary *)[response reqParams];
+        
+        for (id key in dictionary) {
+            
+            NSLog(@"key: %@, value: %@", key, [dictionary objectForKey:key]);
+            
+        }
+    }
+    
+}
+
+- (IBAction)sendRequestAction:(id)sender {
+    
+    TopIOSClient *iosClient =[TopIOSClient getIOSClientByAppKey:KTaoBaoAppKey];
+
+    NSString *requestStr = @"method=taobao.user.buyer.get&fields=user_id,nick,sex,buyer_credit,avatar,has_shop,vip_info";
+    NSString *uid = [[iosClient getAuthByUserId:@"618386961"] user_id];
+    
+    if (requestStr && [requestStr length] > 0)
+    {
+        NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+        
+        NSEnumerator *er = [[requestStr componentsSeparatedByString:@"&"] objectEnumerator];
+        
+        id anObject;
+        
+        while (anObject = [er nextObject]) {
+            
+            NSArray *arr = [(NSString *)anObject componentsSeparatedByString:@"="];
+            
+            if ([arr count] != 2)
+            {
+                continue;
+            }
+            
+            [params setObject:[arr objectAtIndex:1] forKey:[arr objectAtIndex:0]];
+        }
+        
+        
+        
+        [iosClient api:@"GET" params:params target:self cb:@selector(showApiResponse:) userId:uid needMainThreadCallBack:true];
+        
+    }
+    else {
+        
+        [[Message share] messageAlert:@"必须填入请求地址."];
+
+    }
+    
+}
+
+
+
+#pragma mark local network test  
 
 - (void)getInfo:(UIButton *)b
 {
@@ -264,6 +333,14 @@
     [button2 addTarget:self  action:@selector(authAction:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button2];
+    
+    
+    UIButton *button3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button3 setTitle:@"auth taobao" forState:UIControlStateNormal];
+    button3.frame = CGRectMake(20, 300, 280, 50);
+    [button3 addTarget:self  action:@selector(sendRequestAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:button3];
     
 //    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/users.json"];
 //    NSURLRequest *request = [NSURLRequest requestWithURL:url];

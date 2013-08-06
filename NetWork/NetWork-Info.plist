@@ -26,10 +26,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>appcallback</string>
+			<string>gediaoercallback</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>appcallback</string>
+				<string>gediaoercallback</string>
 			</array>
 		</dict>
 	</array>
