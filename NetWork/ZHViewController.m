@@ -20,12 +20,12 @@
 
 -(void)authCallback:(NSString *)url;
 {
-    NSLog(@"%@", url);
+    NSLog(@"%@", url);  
 }
 
 - (IBAction)authAction:(id)sender {
     TopIOSClient *iosClient = [TopIOSClient getIOSClientByAppKey:@"appkey"];
-    [iosClient auth:self cb:@selector(authCallback:)];
+    [iosClient auth:self cb:@selector(authCallback:)];  
 }
 
 
