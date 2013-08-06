@@ -297,14 +297,22 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
-		108B376917ABAAD2008FFC2B /* Unit */ = {
+		10590D8117AFAEBA0041E485 /* other */ = {
 			isa = PBXGroup;
 			children = (
-				108B377317ABAB25008FFC2B /* Common.h */,
-				108B377F17ABBC84008FFC2B /* Unit.h */,
 				10590D7817AF74C30041E485 /* CCLog.h */,
 				10590D7D17AFA2660041E485 /* NSDate+Helper.h */,
 				10590D7E17AFA2670041E485 /* NSDate+Helper.m */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
+		108B376917ABAAD2008FFC2B /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				10590D8117AFAEBA0041E485 /* other */,
+				108B377317ABAB25008FFC2B /* Common.h */,
+				108B377F17ABBC84008FFC2B /* Unit.h */,
 				F44718CE17AEB184007D012F /* String.h */,
 				F44718C917AE4BD2007D012F /* Session.h */,
 				F44718CA17AE4BD2007D012F /* Session.m */,
