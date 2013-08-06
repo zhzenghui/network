@@ -10,18 +10,28 @@
 
 #import "ZHViewController.h"
 #import "TopIOSClient.h"
+#import "TopAppConnector.h"
 
 
 @implementation ZHAppDelegate
 
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    TopAppConnector *appConnector = [TopAppConnector getAppConnectorbyAppKey:KTaoBaoAppKey];
+    
+    [appConnector receiveMessageFromApp:[url absoluteString]];
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL*)url
 {
     
-    TopIOSClient *iosClient = [TopIOSClient getIOSClientByAppKey:KTaoBaoAppKey];
+    TopIOSClient *topIOSClient = [TopIOSClient registerIOSClient:KTaoBaoAppKey appSecret:KTaoBaoSecert callbackUrl:KTaoBaoCallbackUrl needAutoRefreshToken:TRUE];
     
-    [iosClient authCallback:url];
+    [TopAppConnector registerAppConnector:KTaoBaoAppKey topclient:topIOSClient];
     
+
     return YES;
 }
 

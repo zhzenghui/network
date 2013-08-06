@@ -18,7 +18,7 @@
 +(id)getResponseObject:(NSString *)resp;
 
 //授权接口，直接封装了授权的页面和授权返回解析保存,当前暂时支持成功授权返回TopAuth对象，失败场景后续支持
--(id)auth:(id)target cb:(SEL)cb;
+-(void)auth:(id)target cb:(SEL)cb;
 
 //刷新授权access_token，指定刷新某一个用户的授权会话
 -(void)refreshTokenByUserId:(NSString *)userId;
@@ -28,18 +28,6 @@
 //needMainThreadCallBack表明是否回调的时候采用主线程的方式回调（如果为true就采用主线程，主线程回调的作用是当回调函数需要操作ui界面的时候，必须是主线程，如果只是后台保存数据，这个值可以是false）
 //返回的参数可以用于取消改次请求的返回，参看TopIOSSdk中的取消接口cancel,入参就是这个api的出参
 -(NSString *)api:(NSString *)method params:(NSDictionary *)params target:(id)target cb:(SEL)cb userId:(NSString *)userId  needMainThreadCallBack:(Boolean) needMainThreadCallBack;
-
-//调用tql的入口（异步），method请求的方法(GET,POST);params具体的业务和系统参数;callbackBlock用于请求后传递结果回调
-//userid如果传入，则可以根据授权状况自动选择不同的用户授权来请求服务，具体使用参看 http://open.taobao.com/doc/category_list.htm?id=143
-//needMainThreadCallBack表明是否回调的时候采用主线程的方式回调（如果为true就采用主线程，主线程回调的作用是当回调函数需要操作ui界面的时候，必须是主线程，如果只是后台保存数据，这个值可以是false）
-//返回的参数可以用于取消改次请求的返回，参看TopIOSSdk中的取消接口cancel,入参就是这个api的出参
--(NSString *)tql:(NSString *)method params:(NSDictionary *)params callbackBlock:(apiCallbackBlockType)callbackBlock userId:(NSString *)userId needMainThreadCallBack:(Boolean) needMainThreadCallBack;
-
-//调用api入口(异步):  method请求的方法(GET,POST);params具体的业务和系统参数(可以不传，内部会有默认设置，如果要修改比如返回格式，可以设置);callbackBlock用于请求后传递结果回调
-//userid如果传入，则可以根据授权状况自动选择不同的用户授权来请求服务，具体业务参看：http://open.taobao.com/doc/category_list.htm?id=102
-//needMainThreadCallBack表明是否回调的时候采用主线程的方式回调（如果为true就采用主线程，主线程回调的作用是当回调函数需要操作ui界面的时候，必须是主线程，如果只是后台保存数据，这个值可以是false）
-//返回的参数可以用于取消改次请求的返回，参看TopIOSSdk中的取消接口cancel,入参就是这个api的出参
--(NSString *)api:(NSString *)method params:(NSDictionary *)params callbackBlock:(apiCallbackBlockType)callbackBlock userId:(NSString *)userId  needMainThreadCallBack:(Boolean) needMainThreadCallBack;
 
 //调用tql的入口（异步），method请求的方法(GET,POST);params具体的业务和系统参数;target和cb用于请求后传递结果回调（NSString或者NSError两种返回）
 //userid如果传入，则可以根据授权状况自动选择不同的用户授权来请求服务，具体使用参看 http://open.taobao.com/doc/category_list.htm?id=143

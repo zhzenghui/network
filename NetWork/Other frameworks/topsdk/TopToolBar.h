@@ -19,9 +19,7 @@
 
 @interface TopToolBar : NSObject
 
-@property(assign,nonatomic) id<TopToolBarProtocol> delegate;
-@property(copy,nonatomic) NSString* appkey;
-@property(copy,nonatomic) NSString* userId;
+@property(retain,nonatomic) id<TopToolBarProtocol> delegate;
 
 
 +(TopToolBar*) bindBaseView:(UIView*) baseView
@@ -32,7 +30,7 @@
                     withApp:(NSString*) app
                  tmallStyle:(bool) tmalluser
                 unreadCountFromUser:(NSString*) user;
-+(TopToolBar*) getBindToolbar:(UIView*) baseView;
+
 
 - (CGFloat)height;
 - (void)setHeight:(CGFloat)height;
@@ -43,7 +41,6 @@
 
 
 - (void)bringToFront;
-- (void)hidden:(bool)yesOrNo;
 - (void)unbind;
 
 

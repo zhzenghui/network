@@ -27,4 +27,9 @@
 -(void) refundDetail:(NSString *)uid refundId:(NSString *)refundId chatNick:(NSString *)chatNick authString:(NSString *)authString params:(NSDictionary *)params;
 
 
+//跳转到退款列表（所有参数都可选），refundStatus参看JDY_ProtocolConstants中的定义,buyerNick买家信息
+//authString在第一次从无线卖家平台跳转的时候带有的授权信息（如果用户和应用授权有效的情况下会带有）
+//chatNick（可选）如果从旺旺聊天窗口跳转，则会带上聊天对象的nick
+-(void) refundList:(NSString *)uid refundStatus:(NSString *)refundStatus buyerNick:(NSString *)buyerNick chatNick:(NSString *)chatNick authString:(NSString *)authString params:(NSDictionary *)params;
+
 @end

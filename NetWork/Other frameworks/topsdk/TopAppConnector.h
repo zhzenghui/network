@@ -22,7 +22,7 @@
 @property(copy,atomic) NSMutableDictionary *appInfoPool;//缓存app信息，key：appkey，value：AppEntity
 @property(copy,atomic) NSMutableDictionary *userPlugInPool;//缓存插件信息,key:userId value:Dictionary{key:参看Constants里面的plug常量，value:AppKey}。
 
-//发送请求到另一个应用，通过app的native callback模式，模拟阻塞模式，同步等待返回（120秒钟超时）,需要传递对方应用的appkey，
+//发送请求到另一个应用，通过app的native callback模式，模拟阻塞模式，同步等待返回（30秒钟超时）,需要传递对方应用的appkey，
 //事件定义（对方需要能够识别），业务参数。
 -(NSString *)sendRequestToApp:(NSString *)appkey event:(NSString *)event params:(NSMutableDictionary *)params;
 
@@ -37,8 +37,6 @@
 
 //注册事件处理对象及方法，为另一方应用请求到本地应用时做处理对象分配（根据event来分配事件处理target和方法）
 -(void)registerEvent:(NSString *)event eventProcessor:(TopEventCallback *)eventProcessor;
-
-
 
 
 @end

@@ -34,11 +34,9 @@
 @property(copy,nonatomic)NSString *deviceUUID;
 @property(copy,nonatomic)NSString *sdkVersion;
 @property(copy,nonatomic)NSString *deviceName;
-@property(copy,nonatomic)NSString *clientVersion;
 
 //是否需要自动刷新已经授权过的会话，如果授权用户较多不建议使用自动（> 10个）
 @property BOOL needAutoRefreshToken;
-@property BOOL needCheckMainThreadBlockThreaten;//如果设置为true，则会对阻塞模式调用api的情况返回异常的response，默认为false
 
 
 //注册不同的appkey的ios客户端,需要提供appkey，appsecretcode，回调地址（保持和appkey注册的时候填入的回调地址一级域名一致），是否需要自动刷新access_token（在freshtoken有效期内）
@@ -72,16 +70,10 @@
 //如果是通过registerIOSClientWithTracker创建，则可以获得内部的tracker
 -(id)innerTracker;
 
-//获取TOP服务端时间,保持和服务端同步但是非阻塞，只远端请求一次，可以用这个替换掉[NSDate date]获取当前时间
--(NSTimeInterval) getCurrentServerTimeInterval;
-
 //注册地层的错误监控，可以统一调用上层错误处理逻辑
 -(void)registerServiceErrorCodeCallbackEvent:(NSString *)serviceErrorCode eventCallback:(TopEventCallback *) eventCallback;
 
 //注册地层的错误监控，可以统一调用上层错误处理逻辑
 -(void)registerErrorCodeCallbackEvent:(NSNumber *)error eventCallback:(TopEventCallback *) eventCallback;
-
-//检查网络状况
--(NSString *)getCurrentNetWorkStatus;
 
 @end

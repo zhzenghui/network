@@ -24,8 +24,7 @@
 
 -(void) bridgeEnable:(bool) enable;
 
-- (void)addInstanceObserver:(id)observer selector:(SEL)aSelector oncall:(NSString*) methodName;
-- (void)removeInstanceObserver:(NSString*) methodName;
+
 + (void)addObserver:(id)observer selector:(SEL)aSelector oncall:(NSString*) methodName;
 
 + (void)removeObserverForCall:(NSString*) methodName;

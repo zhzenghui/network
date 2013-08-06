@@ -1,7 +1,6 @@
 //
 //  TopAuthCallback.h
 //  TOPIOSSdk
-//  授权回调
 //
 //  Created by cenwenchu on 12-8-2.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
