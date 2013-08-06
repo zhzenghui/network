@@ -18,14 +18,37 @@
 
 @implementation ZHViewController
 
--(void)authCallback:(NSString *)url;
+
+-(void) authCallback:(id)data
 {
-    NSLog(@"%@", url);  
+    if ([data isKindOfClass:[TopAuth class]])
+    {
+        TopAuth *auth = (TopAuth *)data;
+        
+//        [userIds addObject:[auth user_id]];
+        
+        NSLog(@"%@",[auth user_id]);
+        
+//        [_userIdText setText:[auth user_id]];
+    }
+    else
+    {
+        NSLog(@"%@",data);
+    }
+    
 }
 
+
 - (IBAction)authAction:(id)sender {
-    TopIOSClient *iosClient = [TopIOSClient getIOSClientByAppKey:@"appkey"];
-    [iosClient auth:self cb:@selector(authCallback:)];  
+    
+
+    TopIOSClient *iosClient = [TopIOSClient getIOSClientByAppKey:KTaoBaoAppKey];
+
+    TopAuth *auth =  [iosClient getAuthByUserId:@"618386961"];
+    
+    NSLog(@"%@",[auth user_name]);
+
+    [iosClient auth:self cb:@selector(authCallback:)];
 }
 
 

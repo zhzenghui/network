@@ -21,19 +21,10 @@
     TopAppConnector *appConnector = [TopAppConnector getAppConnectorbyAppKey:KTaoBaoAppKey];
     
     [appConnector receiveMessageFromApp:[url absoluteString]];
+    
     return YES;
 }
 
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL*)url
-{
-    
-    TopIOSClient *topIOSClient = [TopIOSClient registerIOSClient:KTaoBaoAppKey appSecret:KTaoBaoSecert callbackUrl:KTaoBaoCallbackUrl needAutoRefreshToken:TRUE];
-    
-    [TopAppConnector registerAppConnector:KTaoBaoAppKey topclient:topIOSClient];
-    
-
-    return YES;
-}
 
 
 - (void)dealloc
@@ -45,7 +36,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    
+    TopIOSClient *topIOSClient = [TopIOSClient registerIOSClient:KTaoBaoAppKey appSecret:KTaoBaoSecert callbackUrl:KTaoBaoCallbackUrl needAutoRefreshToken:TRUE];
+    
+    [TopAppConnector registerAppConnector:KTaoBaoAppKey topclient:topIOSClient];
+    
+    
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
 
     self.viewController = [[[ZHViewController alloc] initWithNibName:@"ZHViewController" bundle:nil] autorelease];
     self.window.rootViewController = self.viewController;
