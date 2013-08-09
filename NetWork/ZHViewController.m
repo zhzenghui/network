@@ -28,7 +28,13 @@
     [iosClient auth:self cb:@selector(authCallback:)];  
 }
 
-
+- (void)parseData:(UIButton *)button
+{
+    
+    
+    
+    
+}
 
 - (void)getInfo:(UIButton *)b
 {
@@ -71,7 +77,7 @@
     
     //                 保存用户信息
     
-    [[User share] saveCurrentUser:userDict];
+    [[Users share] saveCurrentUser:userDict];
     
     //                 登陆成功调用
     
@@ -166,9 +172,9 @@
 //      2.网络验证
 //
     
-    if ( [(User *)[User share] name] ) {
+    if ( [(Users *)[Users share] name] ) {
         
-        DLog(@"current user %@", [(User *)[User share] name]);
+        DLog(@"current user %@", [(Users *)[Users share] name]);
         
     }
     else {
@@ -233,6 +239,14 @@
     [button addTarget:self  action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
+    
+    
+    UIButton *button3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button3 setTitle:@"解析json" forState:UIControlStateNormal];
+    button3.frame = CGRectMake(20, 300, 280, 50);
+    [button3 addTarget:self  action:@selector(parseData:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:button3];
     
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];

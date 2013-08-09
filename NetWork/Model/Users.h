@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+@interface Users : NSObject
 
 @property(nonatomic, retain) NSString *ID;
 @property(nonatomic, retain) NSString *name;
@@ -31,8 +31,8 @@
 - (void)deleteUser:(NSString *)userID;
 
 
-- (NSDictionary *)userToDict:(User *)user;
-- (User *)dictToUser:(NSDictionary *)userDict;
+- (NSDictionary *)userToDict:(Users *)user;
+- (Users *)dictToUser:(NSDictionary *)userDict;
 
 
 - (void)saveCurrentUser:(NSDictionary *)userDict;

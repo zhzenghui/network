@@ -90,7 +90,7 @@ static NetWork *netWork;
 {
     
     //I am setting it as today's date, assumed tha app installed today
-    NSDate *installedDate = [NSDate dateFromString:[[User share] expiredDate]];
+    NSDate *installedDate = [NSDate dateFromString:[[Users share] expiredDate]];
     
     
     //now finding and setting expiry date
@@ -121,10 +121,10 @@ static NetWork *netWork;
  *  不允许跳过更新
  */
 
-- (User *)getUserInfo:(NSDictionary *)dictUser
+- (Users *)getUserInfo:(NSDictionary *)dictUser
 {
     
-    return [[User share] dictToUser: dictUser];
+    return [[Users share] dictToUser: dictUser];
 }
 
 

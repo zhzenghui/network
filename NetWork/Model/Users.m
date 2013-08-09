@@ -6,12 +6,12 @@
 //  Copyright (c) 2013年 zeng hui. All rights reserved.
 //
 
-#import "User.h"
+#import "Users.h"
 
-static User *user;
+static Users *user;
 
+@implementation Users
 
-@implementation User
 @synthesize ID;
 @synthesize name;
 @synthesize email;
@@ -26,7 +26,7 @@ static User *user;
     if (user) {
         return user;
     }
-    user = [[User alloc] init];
+    user = [[Users alloc] init];
 
 
     return user;
@@ -42,7 +42,7 @@ static User *user;
     return self;
 }
 
-- (User *)reloadUserInfo
+- (Users *)reloadUserInfo
 {
     if ([KNSUserDefaults objectForKey:KCurrentUser]) {
         NSDictionary *userDict = [KNSUserDefaults objectForKey:KCurrentUser];
@@ -88,7 +88,7 @@ static User *user;
 }
 
 
-- (NSDictionary *)userToDict:(User *)user
+- (NSDictionary *)userToDict:(Users *)user
 {
     NSMutableDictionary  *userDict = [NSMutableDictionary dictionary];
     
@@ -98,7 +98,7 @@ static User *user;
 }
 
 
-- (User *)dictToUser:(NSDictionary *)userDict
+- (Users *)dictToUser:(NSDictionary *)userDict
 {
 
     self.ID = [userDict objectForKey:@"id"];
