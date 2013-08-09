@@ -18,14 +18,37 @@
 
 @implementation ZHViewController
 
--(void)authCallback:(NSString *)url;
+
+-(void) authCallback:(id)data
 {
-    NSLog(@"%@", url);  
+    if ([data isKindOfClass:[TopAuth class]])
+    {
+        TopAuth *auth = (TopAuth *)data;
+        
+//        [userIds addObject:[auth user_id]];
+        
+        NSLog(@"%@",[auth user_id]);
+        
+//        [_userIdText setText:[auth user_id]];
+    }
+    else
+    {
+        NSLog(@"%@",data);
+    }
+    
 }
 
+
 - (IBAction)authAction:(id)sender {
-    TopIOSClient *iosClient = [TopIOSClient getIOSClientByAppKey:@"appkey"];
-    [iosClient auth:self cb:@selector(authCallback:)];  
+    
+
+    TopIOSClient *iosClient = [TopIOSClient getIOSClientByAppKey:KTaoBaoAppKey];
+
+    TopAuth *auth =  [iosClient getAuthByUserId:@"618386961"];
+    
+    NSLog(@"%@",[auth user_name]);
+
+    [iosClient auth:self cb:@selector(authCallback:)];
 }
 
 - (void)parseData:(UIButton *)button
@@ -255,6 +278,14 @@
     [button2 addTarget:self  action:@selector(authAction:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button2];
+    
+    
+    UIButton *button3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button3 setTitle:@"auth taobao" forState:UIControlStateNormal];
+    button3.frame = CGRectMake(20, 300, 280, 50);
+    [button3 addTarget:self  action:@selector(sendRequestAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:button3];
     
 //    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/users.json"];
 //    NSURLRequest *request = [NSURLRequest requestWithURL:url];

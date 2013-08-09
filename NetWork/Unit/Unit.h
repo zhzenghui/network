@@ -48,7 +48,7 @@
 #define KTaoBaoSecert @"bbff717c92a7d3cdbe99e901cf8057d9"
 
 #define KAppredirect_uri @"http://gediaoer.com"
-#define KTaoBaoCallbackUrl @"appcallback://"
+#define KTaoBaoCallbackUrl @"gediaoercallback://"
 
 
 
